@@ -33,12 +33,12 @@
         {{/if_eq}}
 
         {{#if_eq user.role "Teacher" user.isAdmin true}}
-        <li>
+        {{!-- <li>
             <a href="#">Attendance <i class="fa fa-angle-right"></i></a>
         </li>
         <li>
             <a href="#">Marks And Grades <i class="fa fa-angle-right"></i></a>
-        </li>
+        </li> --}}
         {{/if_eq}}
 
         {{#if user.isAdmin}}
@@ -48,9 +48,9 @@
         <li>
             <a href="/users">Users <i class="fa fa-angle-right"></i></a>
         </li>
-        <li>
+        {{!-- <li>
             <a href="#">Faculties <i class="fa fa-angle-right"></i></a>
-        </li>
+        </li> --}}
         {{/if}}
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-2 text-muted">
             <span>Action</span>

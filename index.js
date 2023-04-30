@@ -9,9 +9,15 @@ const path = require('path');
 const fs = require('fs');
 const breadcrumb = require('express-url-breadcrumb');
 const multer = require('multer');
-
+const mysql=require("mysql2");
 const app = express();
 
+const db=mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "Anant@2002",
+    database: "studentmgmtsystem"
+});
 // Load Routes
 const students = require('./routes/students');
 const users = require('./routes/users');
@@ -125,6 +131,40 @@ app.get('/errors', (req, res) => {
         title: '404 - Page Not Found.'
     });
 });
+
+//sql apis
+app.get("/api/get",(req,res)=>{
+    const sqlGet="SELECT * from STUDENT";
+    db.query(sqlGet,(error,result)=>{
+        // console.log("error",error);
+        // console.log("result",result);
+        res.send(result);
+    })
+})
+
+//add student
+app.post("/api/post",(req,res)=>{
+    const {sname,usn,email,department,gender,Contact}=req.body;
+    const sqlInsert="INSERT INTO STUDENT VALUES (?,?,?,?,?,?);"
+    db.query(sqlInsert,[sname,usn,email,department,gender,Contact],(error,result)=>{
+        if(error)
+        {
+            console.log(error);
+        }
+    })
+})
+
+//add course
+app.post("/api/post/course",(req,res)=>{
+    const {coid,cname,duration,intake,fee,usn}=req.body;
+    const sqlInsert="INSERT INTO courses VALUES (?,?,?,?,?,?);"
+    db.query(sqlInsert,[coid,cname,duration,intake,fee,usn],(error,result)=>{
+        if(error)
+        {
+            console.log(error);
+        }
+    })
+})
 
 // Use Routes
 app.use('/students', students);

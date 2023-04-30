@@ -8,9 +8,15 @@
             <label for="departmentName">Department</label>
             <select name="departmentName" class="form-control custom-select" required>
                 {{#select course.departmentName}}
-                {{#each dept}}
+                {{!-- {{#each dept}}
                 <option value="{{dname}}">{{dname}}</option>
-                {{/each}}
+                {{/each}} --}}
+                <option value="AS">AS</option>
+                <option value="BT">BT</option>
+                <option value="CH">CH</option>
+                <option value="CV">CV</option>
+                <option value="CS">CS</option>
+                <option value="IS">IS</option>
                 {{/select}}
 
             </select>

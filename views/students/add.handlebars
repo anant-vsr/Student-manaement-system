@@ -175,24 +175,38 @@
         </fieldset>
 
         <fieldset>
-            <h4>Course Detail's</h4>
-            <p>Enter course detail's of the student.</p>
+            <h4> Detail's</h4>
+            <p>Enter academic detail's of the student.</p>
             <hr>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="">Course Name ( <span>*</span> )</label>
                     <select name="CourseName" id="chooseDept" class="form-control custom-select" onchange="getCourses(this.value);">
+                         {{#select body.CourseName}}
                         <option value="">Choose...</option>
+                        <option value="DBMS">DBMS</option>
+                        <option value="SE">SE</option>
+                        <option value="FAFL">FAFL</option>
+                        <option value="MML">MML</option>
+                        {{/select}} 
+                        {{!-- <option value="">Choose...</option>
                         {{#each dept}}
-                        <option value="{{dname}}">{{dname}}</option>
-                        {{/each}}
-                    </select>
-                </div>
+                        {{!-- <option value="{{dname}}">{{dname}}</option> --}}
+                       
+                        {{!-- {{/each}} --}}
+                     </select>
+                </div> 
                 <div class="form-group col-md-6">
                     <label for="">Branch / Specialization ( <span>*</span> )</label>
-                    <select name="BranchName" id="course" class="form-control custom-select">
+                    <select name="BranchName" id="chooseDept" class="form-control custom-select">
+                        {{#select body.BranchName}}
                         <option value="">Choose...</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ISE">ISE</option>
+                        <option value="ASE">ASE</option>
+                        <option value="BT">BT</option>
+                        {{/select}}
                     </select>
                 </div>
             </div>

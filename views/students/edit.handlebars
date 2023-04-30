@@ -187,17 +187,30 @@
                 <div class="form-group col-md-6">
                     <label for="">Course Name ( <span>*</span> )</label>
                     <select name="CourseName" id="chooseDept" class="form-control custom-select" onchange="getCourses(this.value);">
+                        {{!-- <option value="">Choose...</option> --}}
+                        {{!-- {{#select_course dept student.CourseName}}
+
+                        {{/select_course}} --}}
+                        {{#select body.CourseName}}
                         <option value="">Choose...</option>
-                        {{#select_course dept student.CourseName}}
-
-                        {{/select_course}}
-
+                        <option value="DBMS">DBMS</option>
+                        <option value="SE">SE</option>
+                        <option value="FAFL">FAFL</option>
+                        <option value="MML">MML</option>
+                        {{/select}}
                     </select>
-                </div>
+                </div> 
                 <div class="form-group col-md-6">
                     <label for="">Branch / Specialization ( <span>*</span> )</label>
-                    <select name="BranchName" id="course" class="form-control custom-select">
-                        <option value="{{student.BranchName}}">{{student.BranchName}}</option>
+                    <select name="BranchName" id="chooseDept" class="form-control custom-select" >
+                        {{!-- <option value="{{student.BranchName}}">{{student.BranchName}}</option> --}}
+                        {{#select body.BranchName}}
+                        <option value="">Choose...</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ISE">ISE</option>
+                        <option value="ASE">ASE</option>
+                        <option value="BT">BT</option>
+                        {{/select}}
                     </select>
                 </div>
             </div>

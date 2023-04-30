@@ -21,9 +21,15 @@
             <select name="departmentName" class="form-control custom-select" required>
                 {{#select body.departmentName}}
                 <option value="">Choose...</option>
-                {{#each dept}}
+                {{!-- {{#each dept}}
                 <option value="{{dname}}">{{dname}}</option>
-                {{/each}}
+                {{/each}} --}}
+                <option value="AS">AS</option>
+                <option value="BT">BT</option>
+                <option value="CH">CH</option>
+                <option value="CV">CV</option>
+                <option value="CS">CS</option>
+                <option value="IS">IS</option>
                 {{/select}}
 
             </select>
@@ -35,7 +41,7 @@
                     required>
             </div>
             <div class="form-group col-md-4">
-                <label for="courseDuration">Duration (in years)</label>
+                <label for="courseDuration">Duration (in months)</label>
                 <input type="text" name="courseDuration" class="form-control" value="{{body.courseDuration}}"
                     placeholder="Duration" required>
             </div>

@@ -169,11 +169,16 @@ function deleteItem(path) {
     });
 }
 
-// Date Picker
-$('#datepicker').datepicker({
-    uiLibrary: 'bootstrap4'
-});
 
-$('#datepicker2').datepicker({
-    uiLibrary: 'bootstrap4'
-});
+
+// Date Picker
+// $('#datepicker').datepicker({
+//     uiLibrary: 'bootstrap4'
+// });
+
+// $('#datepicker2').datepicker({
+//     uiLibrary: 'bootstrap4'
+// });
+
+
+
