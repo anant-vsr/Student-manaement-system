@@ -17,7 +17,7 @@ module.exports = function (passport) {
         }).then(user => {
             if (!user) {
                 return done(null, false, {
-                    message: 'User does not exist\'s'
+                    message: 'User not exists\'s'
                 });
             }
 

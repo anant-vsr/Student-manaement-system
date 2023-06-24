@@ -15,7 +15,7 @@ module.exports = {
         res.render('errors', {
             title: '403 - Forbidden',
             message: '403 - Forbidden',
-            description: 'The request was valid, but the server is refusing action. This happened may be because you might not have the necessary permissions for this resource, or this resource may need an account of some sort.'
+            description: 'The request was valid, but the server is refusing action. This happened may be because you might not have the necessary permissions for this resource.'
         });
     },
     isLoggedIn: function (req, res, next) {

@@ -35,7 +35,7 @@ const feeSchema = new mongoose.Schema({
     },
     amountPaid: {
         type: Number,
-        required: [true, 'Paid amount is required'],
+        required: [true, 'Paid amount is req'],
         validate: {
             isAsync: true,
             validator: async function (val) {
@@ -78,7 +78,7 @@ const feeSchema = new mongoose.Schema({
                     return val
                 }
             },
-            message: 'Due date is required'
+            message: 'Due date is req'
         }
     },
     lateSubmissionFine: {
